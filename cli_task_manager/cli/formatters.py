@@ -10,13 +10,14 @@ def format_task(task, show_description=False):
     reset = "\033[0m"
     status_symbol = "✓" if task["completed"] else " "
 
+    # Format due date
     due_str = ""
     if task["due_date"]:
         try:
             due_date = datetime.fromisoformat(task["due_date"])
             due_str = due_date.strftime("%Y-%m-%d")
 
-
+            # Check if overdue
             if not task["completed"] and due_date < datetime.now():
                 due_str = f"\033[91m{due_str} (OVERDUE)\033[0m"
         except ValueError:
