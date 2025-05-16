@@ -1,3 +1,4 @@
+from csv import Error
 import math
 
 
@@ -30,6 +31,8 @@ def cosine(x):
 
 
 def tangent(x):
+    if x % 180 == 90:
+        return "Error"
     return math.tan(math.radians(x))
 
 

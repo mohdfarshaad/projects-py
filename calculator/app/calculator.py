@@ -50,8 +50,8 @@ class CalculatorApp:
             button = tk.Button(
                 self.root,
                 text=text,
-                width=10,
-                height=3,
+                width=5,
+                height=2,
                 font=("Arial", 18),
                 command=lambda t=text: self.on_button_click(t),
             )
